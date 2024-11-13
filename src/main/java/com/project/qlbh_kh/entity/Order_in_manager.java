@@ -1,6 +1,6 @@
 package com.project.qlbh_kh.entity;
 
-public class order_in_manager {
+public class Order_in_manager {
     private int id;
     private String customer_name;
     private String prod_name;
@@ -8,7 +8,7 @@ public class order_in_manager {
     private double unit_price;
     private double total_amount;
     private String date;
-    public order_in_manager(int id, String customer_name, String prod_name, int quantity, double unit_price, double total_amount, String date)
+    public Order_in_manager(int id, String customer_name, String prod_name, int quantity, double unit_price, double total_amount, String date)
     {
         this.id = id;
         this.customer_name = customer_name;

@@ -1,13 +1,13 @@
 package com.project.qlbh_kh.entity;
 
-public class order {
+public class Order {
     private String orderId;
     private String product;
     private int quantity;
     private String date;
     private String operation;
 
-    public order(String orderId, String item, int quantity, String date, String operation) {
+    public Order(String orderId, String item, int quantity, String date, String operation) {
         this.orderId = orderId;
         this.product = item;
         this.quantity = quantity;

@@ -1,17 +1,14 @@
 package com.project.qlbh_kh.controllers;
 
-import com.project.qlbh_kh.entity.order_in_manager;
+import com.project.qlbh_kh.entity.Order_in_manager;
 import com.project.qlbh_kh.utils.JDBCUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -25,16 +22,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class quanLyHangNhapController extends basicController {
-    @FXML private TableView<order_in_manager> tableView;
-    @FXML private TableColumn<order_in_manager,Integer> idColumn;
-    @FXML private TableColumn<order_in_manager,String> customerNameColumn;
-    @FXML private TableColumn<order_in_manager,String> prodNameColumn;
-    @FXML private TableColumn<order_in_manager,Integer> quantityColumn;
-    @FXML private TableColumn<order_in_manager,Integer> unitPriceColumn;
-    @FXML private TableColumn<order_in_manager,Integer> totalAmountColumn;
-    @FXML private TableColumn<order_in_manager,String> dateColumn;
-    ObservableList<order_in_manager> data = FXCollections.observableArrayList();
+public class QuanLyHangNhapController extends BasicController {
+    @FXML private TableView<Order_in_manager> tableView;
+    @FXML private TableColumn<Order_in_manager,Integer> idColumn;
+    @FXML private TableColumn<Order_in_manager,String> customerNameColumn;
+    @FXML private TableColumn<Order_in_manager,String> prodNameColumn;
+    @FXML private TableColumn<Order_in_manager,Integer> quantityColumn;
+    @FXML private TableColumn<Order_in_manager,Integer> unitPriceColumn;
+    @FXML private TableColumn<Order_in_manager,Integer> totalAmountColumn;
+    @FXML private TableColumn<Order_in_manager,String> dateColumn;
+    ObservableList<Order_in_manager> data = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -58,7 +55,7 @@ public class quanLyHangNhapController extends basicController {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next())
             {
-                data.add(new order_in_manager(
+                data.add(new Order_in_manager(
                         resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
@@ -93,7 +90,7 @@ public class quanLyHangNhapController extends basicController {
             data.clear();
             while (resultSet.next())
             {
-                data.add(new order_in_manager(
+                data.add(new Order_in_manager(
                         resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
@@ -116,7 +113,7 @@ public class quanLyHangNhapController extends basicController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/project/qlbh_kh/views/danhSachKhachHangNhapView.fxml"));
             Scene customerInListScene = new Scene(fxmlLoader.load());
             //set controller cha cho controller cua danh sach ten mat hang
-            danhSachKhachHangNhapController controller = fxmlLoader.getController();
+            DanhSachKhachHangNhapController controller = fxmlLoader.getController();
             controller.setMainController(this);
             //tao stage moi
             Stage customerListStage = new Stage();

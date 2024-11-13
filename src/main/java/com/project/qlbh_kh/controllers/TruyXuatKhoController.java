@@ -1,32 +1,26 @@
 package com.project.qlbh_kh.controllers;
 
-import com.project.qlbh_kh.entity.order;
+import com.project.qlbh_kh.entity.Order;
 import com.project.qlbh_kh.utils.JDBCUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class truyXuatKhoController extends basicController {
-    @FXML private TableView<order> tableView;
-    @FXML private TableColumn<order, String> orderIdColumn;
-    @FXML private TableColumn<order, String> productColumn;
-    @FXML private TableColumn<order, Integer> quantityColumn;
-    @FXML private TableColumn<order, String> dateColumn;
-    @FXML private TableColumn<order, String> operationColumn;
+public class TruyXuatKhoController extends BasicController {
+    @FXML private TableView<Order> tableView;
+    @FXML private TableColumn<Order, String> orderIdColumn;
+    @FXML private TableColumn<Order, String> productColumn;
+    @FXML private TableColumn<Order, Integer> quantityColumn;
+    @FXML private TableColumn<Order, String> dateColumn;
+    @FXML private TableColumn<Order, String> operationColumn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -39,7 +33,7 @@ public class truyXuatKhoController extends basicController {
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         operationColumn.setCellValueFactory(new PropertyValueFactory<>("operation"));
-        ObservableList<order> data = FXCollections.observableArrayList();
+        ObservableList<Order> data = FXCollections.observableArrayList();
 
         String query = "use BTL_QL_BanHang\n" +
                 "SELECT \n" +
@@ -80,7 +74,7 @@ public class truyXuatKhoController extends basicController {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                data.add(new order(
+                data.add(new Order(
                         rs.getString("mã hóa đơn"),
                         rs.getString("mặt hàng"),
                         rs.getInt("số lượng"),
