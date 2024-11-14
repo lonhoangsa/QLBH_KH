@@ -17,6 +17,12 @@ public class Product {
         this.prod_name = prod_name;
         this.quantity = quantity;
     }
+
+    public Product(String prod_name, double price_in) {
+        this.prod_name = prod_name;
+        this.price_in = price_in;
+    }
+
     public int getProd_id() {
         return prod_id;
     }
