@@ -67,11 +67,11 @@
    <center>
       <TableView BorderPane.alignment="CENTER">
          <columns>
-            <TableColumn prefWidth="47.0" text="Mã HĐ" />
-            <TableColumn prefWidth="190.0" text="Khách hàng" />
-            <TableColumn prefWidth="83.0" text="Tổng tiền" />
-            <TableColumn prefWidth="190.0" text="Người nhận" />
-            <TableColumn prefWidth="90.0" text="Ngày" />
+            <TableColumn prefWidth="50.0" text="Mã HĐ" />
+            <TableColumn prefWidth="200.0" text="Khách hàng" />
+            <TableColumn prefWidth="100.0" text="Tổng tiền" />
+            <TableColumn prefWidth="200.0" text="Người nhận" />
+            <TableColumn prefWidth="100.0" text="Ngày" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

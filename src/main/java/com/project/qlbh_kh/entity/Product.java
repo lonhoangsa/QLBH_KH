@@ -40,4 +40,40 @@ public class Product {
     public String toString() {
         return this.prod_name; // Trả về tên sản phẩm để hiển thị
     }
+
+    public void setProd_name(String prod_name) {
+        this.prod_name = prod_name;
+    }
+
+    public void setProd_id(int prod_id) {
+        this.prod_id = prod_id;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getUnit_sold() {
+        return unit_sold;
+    }
+
+    public void setUnit_sold(String unit_sold) {
+        this.unit_sold = unit_sold;
+    }
+
+    public double getPrice_in() {
+        return price_in;
+    }
+
+    public void setPrice_in(double price_in) {
+        this.price_in = price_in;
+    }
+
+    public double getPrice_out() {
+        return price_out;
+    }
+
+    public void setPrice_out(double price_out) {
+        this.price_out = price_out;
+    }
 }
